@@ -89,8 +89,7 @@ void Solve()
     }
     else
     {
-        i = 0;
-        while (i < n && z > 0)
+        i = 0;   while (i < n && z > 0)
         {
             if (s[i] == '0')
                 z--;
