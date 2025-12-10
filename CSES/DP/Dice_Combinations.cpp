@@ -13,7 +13,6 @@
     \________________/
 
 */
-
 #include <bits/stdc++.h>
 using namespace std;
 #define bset(x) __builtin_popcount(x)
