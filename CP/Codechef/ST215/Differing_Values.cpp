@@ -54,54 +54,38 @@ using ll = long long;
 #define inf 0x3f3f3f3f
 const int MOD = 1e9 + 7;
 const int N = 1e5 + 5;
-/*
-    Small Observation
-
-*/
 
 void Solve()
 {
-    int n;
-    cin >> n;
+    int n, k;
+    cin >> n >> k;
     string s;
     cin >> s;
+
     int one = count(all(s), '1');
-    if (one == 0 || one == n || n == 2 || n == 1)
+    int zero = n - one;
+    vector<int> aa(n, -1);
+        int i = 0;
+        while (i + k < n)
+        {
+            if (aa[i] == -1)
+            {
+                    aa[i] = 0;
+                    aa[i + k] = 1;
+                    one--;
+                    zero--;
+                    i++;
+                    continue;
+            }
+            i++;
+        }
+
+    if (one>=0 and zero>=0)
     {
-        cout << "Bob" << endl;
+        cout << "Yes" << endl;
         return;
     }
-    int z = count(all(s), '0');
-    int i = 0;
-    if (s[0] == '1')
-    {
-        while (i < n && one > 0)
-        {
-            if (s[i] == '1')
-                one--;
-            else
-            {
-                cout << "Alice" << endl;
-                return;
-            }
-            i++;
-        }
-    }
-    else
-    {
-        i = 0;   while (i < n && z > 0)
-        {
-            if (s[i] == '0')
-                z--;
-            else
-            {
-                cout << "Alice" << endl;
-                return;
-            }
-            i++;
-        }
-    }
-    cout << "Bob" << endl;
+    cout << "No" << endl;
 }
 
 int32_t main()
