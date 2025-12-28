@@ -12,3 +12,17 @@ build/
 *.cph
 *.o
 a.out
+*.tmp
+*.temp
+*.swp
+*.bak
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.obj
+*.ilk
+*.pdb
+CMakeCache.txt
+CMakeFiles/
+cmake-build-*/
+
